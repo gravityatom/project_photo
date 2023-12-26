@@ -8,3 +8,7 @@ Collecting metadata from photos for organizing.
 3. Identify faces
 4. Extract metadata from photos
 5. Python module
+
+# Usage
+
+Examples of how to use the script
