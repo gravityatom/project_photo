@@ -12,4 +12,3 @@ A Python command line script which extracts the metadata from each photo in your
 
 # Usage
 
-Examples of how to use the script
