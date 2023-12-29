@@ -9,3 +9,6 @@ A Python command line script which extracts the metadata from each photo in your
 3. Identify faces
 4. Extract metadata from photos
 5. Python module
+
+# Usage
+
