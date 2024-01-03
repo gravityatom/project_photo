@@ -2,7 +2,8 @@
 import argparse
 
 
-
+def find_photos(photo_dir):
+    print(f"Searching for photos in {photo_dir}.")
 
 def main():
    # TODO: Can change later
@@ -19,7 +20,10 @@ def main():
     
     args = parser.parse_args()
 
-
-
+    print(f"Processing {args.photo_dir} in your directory.")
+    
+    find_photos(args.photo_dir)
+    
+    
 if __name__ == '__main__':
     main()
