@@ -10,7 +10,7 @@ def main():
     
     # setting up the options : photodir, help, and build index 
     parser.add_argument("--photo_dir", type = str, required = True, 
-                        help = "photo_directory" )
+                        help = "photo directory" )
     
     parser.add_argument("--h", help = "display help" )
     
