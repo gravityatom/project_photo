@@ -11,4 +11,5 @@ A Python command line script which extracts the metadata from each photo in your
 5. Python module
 
 # Usage
-
+$ photo_finder.py  --photo_dir /path/photos [--build_index] [-h] 
+$ search_photos.py --start_date YYYYMMDD --end_data YYYYMMDD
