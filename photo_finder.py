@@ -12,9 +12,10 @@ def main():
     parser.add_argument("--photo_dir", type = str, required = True, 
                         help = "photo directory" )
     
-    parser.add_argument("--h", help = "display help" )
+    parser.add_argument("--h", help = "display help", action = "store_true")
     
-    parser.add_argument("--build_index", help = "build index from scratch" )
+    parser.add_argument("--build_index", help = "build index from scratch", 
+                        action = "store_true" )
     
     args = parser.parse_args()
 
