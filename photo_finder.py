@@ -1,9 +1,13 @@
 # -*- coding: utf-8 -*-
 import argparse
-
+import pathlib
 
 def find_photos(photo_dir):
     print(f"Searching for photos in {photo_dir}.")
+    start_dir = pathlib.Path(photo_dir)
+    for photo in start_dir.rglob("*.jpg"):
+        print(f"Found photo: {photo}")
+        
 
 def main():
    # TODO: Can change later
