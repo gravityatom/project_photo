@@ -26,14 +26,7 @@ def find_photos(photo_dir):
     
     print(f"Photo count: {photo_count}.")
         
-        
-        
-        
-        
-        
-        
-        
-        
+
 
 def extract_metadata(photo):
     
@@ -67,6 +60,9 @@ def main():
     parser.add_argument("--photo_dir", type = str, required = True, 
                         help = "photo directory" )
     
+    parser.add_argument("--photo_db", type = str, required = True, 
+                        help = "photo database in csv format" )
+    
     parser.add_argument("--h", help = "display help", action = "store_true")
     
     parser.add_argument("--build_index", help = "build index from scratch", 
@@ -82,3 +78,8 @@ def main():
 if __name__ == '__main__':
     
     main()
+    
+    
+    
+    
+    
