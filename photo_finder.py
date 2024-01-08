@@ -3,14 +3,14 @@ import argparse
 
 import pathlib
 
-from PIL import Image
-
-from PIL.ExifTags import TAGS
+from exif import Image
 
 
 def find_photos(photo_dir):
    
     photo_count = 0 
+   
+    csv_content = "photo,make,datetime,model\n"
    
     print(f"Searching for photos in {photo_dir}.")
     
@@ -22,8 +22,22 @@ def find_photos(photo_dir):
         
         photo_count += 1
        
-        extract_metadata(photo)
-    
+        
+       
+        photo_metadata = extract_metadata(photo)
+        
+        # append row to csv_content
+        csv_content += photo_metadata
+        
+        
+
+    # saving csv_content to a file
+    f = open(args.photo_db, "w")
+    f.write(csv_content)
+    f.close()
+        
+        
+        
     print(f"Photo count: {photo_count}.")
         
 
@@ -31,26 +45,21 @@ def find_photos(photo_dir):
 def extract_metadata(photo):
     
     print(f"Extracting metadata from {photo}.")
-    
-    # opens image
-    image = Image.open(photo)
-    
-    # extracting the exif metadata
-    exifdata = image.getexif()
-    
-    # looping through all the tags present in exifdata
-    for tagid in exifdata:
+       
    
-        # getting the tag name instead of tag id
-        tagname = TAGS.get(tagid, tagid)
+    # opens image
+    #image = Image.open(photo)
+    with open(photo, 'rb') as img_file:
+        img = Image(img_file)
         
-        # passing the tagid to get its respcetive value
-        value = exifdata.get(tagid)
-        
-        print(f"  {tagname:25}: {value}")
+    
+    csv_row = f"{photo},{img.get("make")},{img.get("datetime")},{img.get("model")}\n"
+    return csv_row
+    #print(f"{img.list_all()}")
+
     
     
-    
+
 
 def main():
     # TODO: Can change later
