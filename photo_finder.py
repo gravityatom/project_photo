@@ -46,11 +46,19 @@ def extract_metadata(photo):
         
 
     print(f"make:{img.get('make')}")
-     
+    
+    if img.get("datetime"):
+        
+    
+        datetime = img.get("datetime").split()
+        date_str = datetime[0]
+        date_str = date_str.replace(":", "")
+    else:
+        date_str = img.get("datetime")
     
     csv_row = f'{photo},'
     csv_row += f'{img.get("make")},'
-    csv_row += f'{img.get("datetime")},'
+    csv_row += f'{date_str},'
     csv_row += f'{img.get("model")}'
     csv_row += "\n"
 
