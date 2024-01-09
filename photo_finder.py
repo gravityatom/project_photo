@@ -49,8 +49,8 @@ def extract_metadata(photo):
      
     
     csv_row = f'{photo},'
-    csv_row += f'{img.get("make")}'
-    csv_row += f'{img.get("datetime")}'
+    csv_row += f'{img.get("make")},'
+    csv_row += f'{img.get("datetime")},'
     csv_row += f'{img.get("model")}'
     csv_row += "\n"
 
