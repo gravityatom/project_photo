@@ -11,8 +11,12 @@ def search_photos(photo_db):
    
     df = pd.read_csv(photo_db)
     
-    df.query('datetime == args.start_date' and 'datetime == args.end_date', inplace = True)
-    print(df)
+    start_date = args.start_date
+    end_date   = args.end_date
+    
+    df2 = df.query("datetime <= @start_date" and "datetime >= @end_date")
+    
+    print(df2)
 
 
 
